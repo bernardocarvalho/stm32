@@ -41,6 +41,11 @@ endif
 # All Target
 all: STM32F767ZI_Nucleo.elf
 
+## openocd -f board/stm32f7discovery.cfg
+## telnet 127.0.0.1 4444
+#  reset halt
+#  program STM32F767ZI_Nucleo. verify reset"
+#  reset run
 # Tool invocations
 STM32F767ZI_Nucleo.elf: $(OBJS) $(USER_OBJS) ../STM32F767ZITx_FLASH.ld
 	@echo 'Building target: $@'
@@ -49,6 +54,9 @@ STM32F767ZI_Nucleo.elf: $(OBJS) $(USER_OBJS) ../STM32F767ZITx_FLASH.ld
 	@echo 'Finished building target: $@'
 	@echo ' '
 	$(MAKE) --no-print-directory post-build
+
+#STM32F767ZI_Nucleo.hex: STM32F767ZI_Nucleo.elf
+#	$(OBJCPY) -Oihex  $< $@
 
 # Other Targets
 clean:

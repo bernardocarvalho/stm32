@@ -1,5 +1,5 @@
-STM_CUBE_FW_DIR =/home/bernardo/STM32Cube/Repository/STM32Cube_FW_F7_V1.7.0
-ARM_TOOL_DIR = /opt/gcc-arm-none-eabi-5_4-2016q3
+STM_CUBE_FW_DIR =/Users/bernardo/STM32Cube/Repository/STM32Cube_FW_F7_V1.7.0
+ARM_TOOL_DIR = /Users/bernardo/STM32Cube/gcc-arm-none-eabi-5_4-2016q3
 CC = $(ARM_TOOL_DIR)/bin/arm-none-eabi-gcc
 AS = $(ARM_TOOL_DIR)/bin/arm-none-eabi-as
 OBJCPY = $(ARM_TOOL_DIR)/bin/arm-none-eabi-objcopy
