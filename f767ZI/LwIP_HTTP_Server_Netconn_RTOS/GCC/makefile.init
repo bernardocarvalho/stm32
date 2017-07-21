@@ -1,0 +1,25 @@
+STM_CUBE_FW_DIR = /home/bernardo/STM32Cube/Repository/STM32Cube_FW_F7_V1.7.0
+ARM_TOOL_DIR =  /opt/gcc-arm-none-eabi-5_4-2016q3
+CC = $(ARM_TOOL_DIR)/bin/arm-none-eabi-gcc
+AS = $(ARM_TOOL_DIR)/bin/arm-none-eabi-as
+OBJCPY = $(ARM_TOOL_DIR)/bin/arm-none-eabi-objcopy
+SIZE = $(ARM_TOOL_DIR)/bin/arm-none-eabi-size
+
+INCLUDES =-I. 
+INCLUDES +=-I../../Inc 
+INCLUDES +=-I../../Src 
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Drivers/CMSIS/Device/ST/STM32F7xx/Include"
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Drivers/STM32F7xx_HAL_Driver/Inc"
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Drivers/BSP/STM32F7xx_Nucleo_144"
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Drivers/BSP/Components/Common" 
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Middlewares/Third_Party/LwIP/src/include" 
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Middlewares/Third_Party/LwIP/system" 
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM7/r0p1"
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Middlewares/Third_Party/FreeRTOS/Source"
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS"
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Middlewares/Third_Party/FreeRTOS/Source/include"
+INCLUDES +=-I"$(STM_CUBE_FW_DIR)/Drivers/CMSIS/Include"
+
+CFLAGS = -mcpu=cortex-m7 -mthumb -mfloat-abi=hard -mfpu=fpv5-sp-d16 -DUSE_HAL_DRIVER -DSTM32F767xx -DUSE_STM32F7XX_NUCLEO_144 
+CFLAGS += -Os -g3 -Wall -fmessage-length=0 -ffunction-sections -c -fmessage-length=0 -MMD -MP
+
